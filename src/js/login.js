@@ -14,7 +14,7 @@ class App extends React.Component {
                         <img id="marginImgInit" src={imagen}></img>
                     </div>
                     <div class="col">
-                        <div class="row"><Inicio /></div>
+                        <Inicio />
                         <div class="row" id="marginAccount">
                         <a href="../html/createAccount.html" class="btn btn-outline-success btn-lg btn-block">Create your Account <BsArrowRight /></a>
                         </div>
