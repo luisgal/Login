@@ -10,30 +10,52 @@ const HWP_Config_Login = new HtmlWebpackPlugin({
     favicon: "./src/img/icons/favicon.ico",
     template: './src/html/login.html',
     filename: 'html/login.html',
-    chunks: ['login']
+    chunks: ['login'],
+    minify: {
+        removeAttributeQuotes:  true,
+        collapseWhitespace: true,
+        removeComments: true
+    },
 });
 const HWP_Config_Account = new HtmlWebpackPlugin({
     favicon: "./src/img/icons/favicon.ico",
     template: './src/html/createAccount.html',
     filename: 'html/createAccount.html',
-    chunks: ['createAccount']
+    chunks: ['createAccount'],
+    minify: {
+        removeAttributeQuotes:  true,
+        collapseWhitespace: true,
+        removeComments: true
+    },
 });
+
+const TerserPlugin = require('terser-webpack-plugin');
+const TP_Config = new TerserPlugin();
 
 const MiniCSSWebpackPlugin = require('mini-css-extract-plugin');
 const MCSSWP_Config = new MiniCSSWebpackPlugin({
     filename: "css/[name].css"
 });
 
+const OptimizeCSSAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
+const OCSSAP_Congif = new OptimizeCSSAssetsWebpackPlugin();
+
 const config = merge(common, {
-    mode: 'development',
+    mode: 'production',
     output: {
-        filename: 'js/[name].bundle.js',
-        path: path.resolve(__dirname, "loginDev")
+        filename: 'js/[name].[contentHash].bundle.js',
+        path: path.resolve(__dirname, "loginProd")
+    },
+    optimization: {
+        minimizer: [
+            OCSSAP_Congif, 
+            TP_Config,
+            HWP_Config_Login,
+            HWP_Config_Account
+        ]
     },
     plugins: [
         MCSSWP_Config,
-        HWP_Config_Login,
-        HWP_Config_Account,
         CWP_Config
     ],
     module: {
@@ -50,15 +72,14 @@ const config = merge(common, {
                 use: {
                     loader: 'file-loader',
                     options: {
-                        name: '[name].[ext]',
+                        name: '[name].[hash].[ext]',
                         outputPath: "img",
-                        publicPath: '../img'  
+                        publicPath: '../img'   
                     }
                 }
             }
         ]
     }
 });
-
 
 module.exports = config;

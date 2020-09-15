@@ -4,8 +4,10 @@
   "description": "Login",
   "main": "index.js",
   "scripts": {
-    "com" : "webpack --config webpack.common.js",
-    "dev" : "webpack --config webpack.dev.js"
+    "com": "webpack --config webpack.common.js",
+    "dev": "webpack --config webpack.dev.js",
+    "prod": "webpack --config webpack.prod.js",
+    "serv": "webpack-dev-server --config webpack.serv.js"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +15,8 @@
   "dependencies": {
     "@babel/cli": "^7.11.6",
     "@babel/core": "^7.11.6",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-syntax-class-properties": "^7.10.4",
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
     "babel-loader": "^8.1.0",
@@ -28,6 +32,7 @@
     "react": "^16.13.1",
     "react-bootstrap": "^1.3.0",
     "react-dom": "^16.13.1",
+    "react-icons": "^3.11.0",
     "style-loader": "^1.2.1",
     "terser-webpack-plugin": "^4.2.0",
     "webpack": "^4.44.1",

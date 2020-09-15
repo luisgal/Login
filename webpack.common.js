@@ -1,20 +1,9 @@
 const path = require('path');
-const common = require('./webpack.common');
-
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HWP_1 = new HtmlWebpackPlugin({
-    template: './src/html/login.html',
-    filename: 'html/login.html'
-});
 
 const config = {
-    mode: 'development',
     entry: {
-        main: './src/js/index'
-    },
-    output: {
-        filename: 'js/[name].bundle.js',
-        path: path.resolve(__dirname, "build")
+        login: './src/js/login',
+        createAccount: './src/js/createAccount'
     },
     module: {
         rules: [
@@ -24,15 +13,23 @@ const config = {
                     loader: 'babel-loader'
                 },
                 exclude: /node_modules/
+            },
+            {
+                test: /.html$/,
+                use: {
+                    loader: 'html-loader'
+                }
             }
         ]
     },
     resolve: {
         extensions: ['.js', '.jsx']
     },
-    plugins: [
-        HWP_1
-    ]
+    optimization: {
+        splitChunks: {
+            chunks: 'all',
+        },
+    },
 };
 
 module.exports = config;

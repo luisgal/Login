@@ -1,0 +1,37 @@
+.border {
+    border: 2.5px solid rgba(51, 41, 41, 0.5);
+}
+
+.inicioColor {
+    background: rgba(35,237,146,1);
+    background: -moz-linear-gradient(left, rgba(35,237,146,1) 0%, rgba(181,252,169,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(35,237,146,1)), color-stop(100%, rgba(181,252,169,1)));
+    background: -webkit-linear-gradient(left, rgba(35,237,146,1) 0%, rgba(181,252,169,1) 100%);
+    background: -o-linear-gradient(left, rgba(35,237,146,1) 0%, rgba(181,252,169,1) 100%);
+    background: -ms-linear-gradient(left, rgba(35,237,146,1) 0%, rgba(181,252,169,1) 100%);
+    background: linear-gradient(to right, rgba(35,237,146,1) 0%, rgba(181,252,169,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#23ed92', endColorstr='#b5fca9', GradientType=1 );
+}
+
+.containerInicio {
+    background-color: white;
+    border-top-left-radius: 4em;
+    border-top-right-radius: 4em;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    margin-top: 7%;
+    padding-top: 5%;
+    padding-left: 7%;
+    padding-right: 7%;
+    padding-bottom: 5%;
+}
+
+#marginAccount{
+    margin: 10%;
+    margin-bottom: 0;
+    padding-top: 10%;
+}
+
+#marginImgInit{
+    margin: 7%;
+}
