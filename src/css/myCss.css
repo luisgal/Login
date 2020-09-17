@@ -13,13 +13,14 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#23ed92', endColorstr='#b5fca9', GradientType=1 );
 }
 
-.containerInicio {
+.containerInicio, .container-B {
     background-color: white;
     border-top-left-radius: 4em;
     border-top-right-radius: 4em;
     border-bottom-left-radius: 1em;
     border-bottom-right-radius: 1em;
-    margin-top: 7%;
+    margin-top: 5%;
+    margin-bottom: 5%;
     padding-top: 5%;
     padding-left: 7%;
     padding-right: 7%;
@@ -34,4 +35,8 @@
 
 #marginImgInit{
     margin: 7%;
+}
+
+.card-w {
+    max-width: 25rem;
 }

@@ -1,0 +1,47 @@
+{
+    "user": {
+        "name": "Luis",
+        "correo": "wladeck1@hotmail.com"
+    },
+    "preguntas" : [
+        {
+            "id": "1",
+            "name": "Intento 1",
+            "descripcion" : "La pregunta 1",
+            "link" : "#"
+        },
+        {
+            "id": "2",
+            "name": "Intento 2",
+            "descripcion" : "La pregunta 2",
+            "link" : "#"
+        },
+        {
+            "id": "3",
+            "name": "Intento 3",
+            "descripcion" : "La pregunta 3",
+            "link" : "#"
+        }
+    ],
+    "examenes" : [
+        {
+            "id": "1",
+            "name": "Intento 1",
+            "descripcion" : "El examen 1",
+            "link" : "#"
+        },
+        {
+            "id": "2",
+            "name": "Intento 2",
+            "descripcion" : "El examen 2",
+            "link" : "#"
+        },
+        {
+            "id": "3",
+            "name": "Intento 3",
+            "descripcion" : "El examen 3",
+            "link" : "#"
+        }
+    ],
+    "probar": false
+}

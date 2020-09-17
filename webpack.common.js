@@ -1,10 +1,22 @@
-const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CWP_Config = new CopyWebpackPlugin({
+    patterns: [
+        { from: './src/js/data', to: 'js/data' }
+    ]
+}); 
 
 const config = {
     entry: {
         login: './src/js/login',
-        createAccount: './src/js/createAccount'
+        createAccount: './src/js/createAccount',
+        loby: './src/js/loby',
+        preguntas: './src/js/preguntas',
+        examenes: './src/js/examenes',
+        newExam: './src/js/newExam'
     },
+    plugins: [
+        CWP_Config
+    ],
     module: {
         rules: [
             {

@@ -1,7 +1,11 @@
 import React from "react";
 import {render} from "react-dom";
+
 import NewAccount from "./components/newAccount";
+
 import "../css/myCss.css";
+import 'bootswatch/dist/litera/bootstrap.min.css';
+
 import imagen from "../img/img-01.png";
 
 class App extends React.Component {

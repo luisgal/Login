@@ -15,7 +15,7 @@ const HWP_Config_Login = new HtmlWebpackPlugin({
         removeAttributeQuotes:  true,
         collapseWhitespace: true,
         removeComments: true
-    },
+    }
 });
 const HWP_Config_Account = new HtmlWebpackPlugin({
     favicon: "./src/img/icons/favicon.ico",
@@ -26,7 +26,51 @@ const HWP_Config_Account = new HtmlWebpackPlugin({
         removeAttributeQuotes:  true,
         collapseWhitespace: true,
         removeComments: true
-    },
+    }
+});
+const HWP_Config_Loby = new HtmlWebpackPlugin({
+    favicon: "./src/img/icons/favicon.ico",
+    template: './src/html/loby.html',
+    filename: 'html/loby.html',
+    chunks: ['loby'],
+    minify: {
+        removeAttributeQuotes:  true,
+        collapseWhitespace: true,
+        removeComments: true
+    }
+});
+const HWP_Config_Preguntas = new HtmlWebpackPlugin({
+    favicon: "./src/img/icons/favicon.ico",
+    template: './src/html/preguntas.html',
+    filename: 'html/preguntas.html',
+    chunks: ['preguntas'],
+    minify: {
+        removeAttributeQuotes:  true,
+        collapseWhitespace: true,
+        removeComments: true
+    }
+});
+const HWP_Config_Examenes = new HtmlWebpackPlugin({
+    favicon: "./src/img/icons/favicon.ico",
+    template: './src/html/examenes.html',
+    filename: 'html/examenes.html',
+    chunks: ['examenes'],
+    minify: {
+        removeAttributeQuotes:  true,
+        collapseWhitespace: true,
+        removeComments: true
+    }
+});
+const HWP_Config_NewExam = new HtmlWebpackPlugin({
+    favicon: "./src/img/icons/favicon.ico",
+    template: './src/html/newExam.html',
+    filename: 'html/newExam.html',
+    chunks: ['newExam'],
+    minify: {
+        removeAttributeQuotes:  true,
+        collapseWhitespace: true,
+        removeComments: true
+    }
 });
 
 const TerserPlugin = require('terser-webpack-plugin');
@@ -51,7 +95,11 @@ const config = merge(common, {
             OCSSAP_Congif, 
             TP_Config,
             HWP_Config_Login,
-            HWP_Config_Account
+            HWP_Config_Account,
+            HWP_Config_Loby,
+            HWP_Config_Preguntas,
+            HWP_Config_Examenes,
+            HWP_Config_NewExam
         ]
     },
     plugins: [
@@ -68,7 +116,7 @@ const config = merge(common, {
                 ]
             },
             {
-                test: /.(svg|png|jpg|gif|ico)$/,
+                test: /.(svg|png|jpg|gif)$/,
                 use: {
                     loader: 'file-loader',
                     options: {

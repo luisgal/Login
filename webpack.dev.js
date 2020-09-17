@@ -18,6 +18,30 @@ const HWP_Config_Account = new HtmlWebpackPlugin({
     filename: 'html/createAccount.html',
     chunks: ['createAccount']
 });
+const HWP_Config_Loby = new HtmlWebpackPlugin({
+    favicon: "./src/img/icons/favicon.ico",
+    template: './src/html/loby.html',
+    filename: 'html/loby.html',
+    chunks: ['loby']
+});
+const HWP_Config_Preguntas = new HtmlWebpackPlugin({
+    favicon: "./src/img/icons/favicon.ico",
+    template: './src/html/preguntas.html',
+    filename: 'html/preguntas.html',
+    chunks: ['preguntas']
+});
+const HWP_Config_Examenes = new HtmlWebpackPlugin({
+    favicon: "./src/img/icons/favicon.ico",
+    template: './src/html/examenes.html',
+    filename: 'html/examenes.html',
+    chunks: ['examenes']
+});
+const HWP_Config_NewExam = new HtmlWebpackPlugin({
+    favicon: "./src/img/icons/favicon.ico",
+    template: './src/html/newExam.html',
+    filename: 'html/newExam.html',
+    chunks: ['newExam']
+});
 
 const MiniCSSWebpackPlugin = require('mini-css-extract-plugin');
 const MCSSWP_Config = new MiniCSSWebpackPlugin({
@@ -31,10 +55,14 @@ const config = merge(common, {
         path: path.resolve(__dirname, "loginDev")
     },
     plugins: [
+        CWP_Config,
         MCSSWP_Config,
         HWP_Config_Login,
         HWP_Config_Account,
-        CWP_Config
+        HWP_Config_Loby,
+        HWP_Config_Preguntas,
+        HWP_Config_Examenes,
+        HWP_Config_NewExam
     ],
     module: {
         rules: [
@@ -46,7 +74,7 @@ const config = merge(common, {
                 ]
             },
             {
-                test: /.(svg|png|jpg|gif|ico)$/,
+                test: /.(svg|png|jpg|gif)$/,
                 use: {
                     loader: 'file-loader',
                     options: {
