@@ -1,11 +1,12 @@
 {
-    "login"         : "/html/login.html",
-    "newAccount"    : "/html/createAccount.html", 
-    "loby"          : "/html/loby.html",
-    "preguntas"     : "/html/preguntas.html",
-    "examenes"      : "/html/examenes.html",
-    "newPregunta"   : "/html/newPregunta.html",
-    "newExam"       : "/html/newExam.html",
+    "host": "",
+    "login"         : "/views/html/login.html",
+    "newAccount"    : "/views/html/createAccount.html", 
+    "loby"          : "/views/html/loby.html",
+    "preguntas"     : "/views/html/preguntas.html",
+    "examenes"      : "/views/html/examenes.html",
+    "newPregunta"   : "/views/html/newPregunta.html",
+    "newExam"       : "/views/html/newExam.html",
     "validateUser"  : "/validateUser",
     "createUser"    : "/createUser"
 }
