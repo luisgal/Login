@@ -18,12 +18,12 @@ class Inicio extends React.Component {
                 <div class="col">
                     <div class="form-group">
                         <label for="email"><FaUserAlt /> Email address</label>
-                        <input type="email" class="form-control rounded-pill border" id="email" aria-describedby="emailHelp" placeholder="Enter email"/>
+                        <input type="email" class="form-control rounded-pill border" id="email" aria-describedby="emailHelp" placeholder="Enter email" name="email"/>
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                    </div>
+                    </div> 
                     <div class="form-group">
                         <label for="password"><FaKey /> Password</label>
-                        <input type="password" class="form-control rounded-pill border" id="password" placeholder="Password"/>
+                        <input type="password" class="form-control rounded-pill border" id="password" placeholder="Password" name="password"/>
                     </div>
                     <p class="text-danger">{message}</p>
                     <button type="submit" class="btn btn-success btn-lg">Sing in <GrLogin /></button>

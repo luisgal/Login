@@ -28,7 +28,7 @@ class App extends React.Component {
                     mode: 'cors',
                     cache: 'default' };
 
-        var myRequest = new Request('/views/data/links.json', myInit);
+        var myRequest = new Request('/data/links.json', myInit);
         
         // I will use fake api from jsonplaceholder website
         // this return 100 data 
@@ -70,9 +70,9 @@ class App extends React.Component {
                             <img id="marginImgInit" src={imagen}></img>
                         </div>
                         <div class="col">
-                            <Inicio validar={this.state.data.validateUser} />
+                            <Inicio validar={this.state.data.host + this.state.data.validateUser} />
                             <div class="row" id="marginAccount">
-                            <a href={this.state.data.newAccount} class="btn btn-outline-success btn-lg btn-block">Create your Account <BsArrowRight /></a>
+                            <a href={this.state.data.host + this.state.data.newAccount} class="btn btn-outline-success btn-lg btn-block">Create your Account <BsArrowRight /></a>
                             </div>
                         </div>
                     </div> 

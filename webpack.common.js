@@ -1,7 +1,7 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CWP_Config = new CopyWebpackPlugin({
     patterns: [
-        { from: './src/data', to: 'views/data' }
+        { from: './src/data', to: 'data' }
     ]
 }); 
 
