@@ -7,19 +7,25 @@ import { FaKey } from 'react-icons/fa';
 import { FaUserAlt } from 'react-icons/fa';
 class Inicio extends React.Component {
     render() {
+        const message = "";
+        if(this.props.sesion == "wrong user"){
+            message = "Contraseña y/o usuario incorrectos."
+        }
+        
         return (
-            <form action="#" method="GET">
+            <form action={this.props.validar} method="GET">
             <div class="container-sm">
                 <div class="col">
                     <div class="form-group">
-                        <label for="exampleInputEmail1"><FaUserAlt /> Email address</label>
-                        <input type="email" class="form-control rounded-pill border" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
+                        <label for="email"><FaUserAlt /> Email address</label>
+                        <input type="email" class="form-control rounded-pill border" id="email" aria-describedby="emailHelp" placeholder="Enter email"/>
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1"><FaKey /> Password</label>
-                        <input type="password" class="form-control rounded-pill border" id="exampleInputPassword1" placeholder="Password"/>
+                        <label for="password"><FaKey /> Password</label>
+                        <input type="password" class="form-control rounded-pill border" id="password" placeholder="Password"/>
                     </div>
+                    <p class="text-danger">{message}</p>
                     <button type="submit" class="btn btn-success btn-lg">Sing in <GrLogin /></button>
                 </div>
             </div>

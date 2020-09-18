@@ -1,16 +1,14 @@
 import React from "react";
 import {render} from "react-dom";
+import {Form,Col,Row} from 'react-bootstrap';
 
-import Inicio from "./components/inicio";
-
-import "../css/myCss.css";
 import 'bootswatch/dist/litera/bootstrap.min.css';
+import "../css/myCss.css";
 
-import imagen from "../img/img-01.png";
-
-import { BsArrowRight } from 'react-icons/bs';
+import NavBar from './components/navBar';
 
 class App extends React.Component {
+    
     constructor(props){
         super(props);
         this.state = {
@@ -28,7 +26,7 @@ class App extends React.Component {
                     mode: 'cors',
                     cache: 'default' };
 
-        var myRequest = new Request('/views/data/links.json', myInit);
+        var myRequest = new Request('/js/data/dataFront.json', myInit);
         
         // I will use fake api from jsonplaceholder website
         // this return 100 data 
@@ -54,6 +52,7 @@ class App extends React.Component {
     }
     
     render() {
+
         const {error, isLoaded, data} = this.state;
 
         this.extractData();
@@ -63,26 +62,27 @@ class App extends React.Component {
         }else if (!isLoaded) {
             return <div>Loading ...</div>
         }else{
-            return ( 
-                <div class="container containerInicio">
-                    <div class="row">
-                        <div class="col">
-                            <img id="marginImgInit" src={imagen}></img>
-                        </div>
-                        <div class="col">
-                            <Inicio validar={this.state.data.validateUser} />
-                            <div class="row" id="marginAccount">
-                            <a href={this.state.data.newAccount} class="btn btn-outline-success btn-lg btn-block">Create your Account <BsArrowRight /></a>
-                            </div>
-                        </div>
-                    </div> 
+            return(
+                <div>
+                    <NavBar />
+                    <Form action="#">
+                    <div class="container container-B">
+                        <h2>Pregunta: </h2>
+                        <input class="form-control" type="text" placeholder="Nombre de la pregunta" id="examName"></input>
+                        
+                        <h2>Descripcion: </h2>
+                        <textarea class="form-control" id="examDescripcion" placeholder="Descripcion de lo que se debera hacer en esta pregunta" rows="3"></textarea>
+
+                        <button class="btn btn-outline-success btn-lg btn-block">Crear Pregunta</button>
+                    </div>
+                    </Form>
                 </div>
-            )
+            );
         }
     } 
 }
 
 render(
     <App/>,
-    document.getElementById('app_login')
+    document.getElementById('app_newPregunta')
 )

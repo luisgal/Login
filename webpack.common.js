@@ -1,7 +1,7 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CWP_Config = new CopyWebpackPlugin({
     patterns: [
-        { from: './src/js/data', to: 'js/data' }
+        { from: './src/data', to: 'views/data' }
     ]
 }); 
 
@@ -12,7 +12,8 @@ const config = {
         loby: './src/js/loby',
         preguntas: './src/js/preguntas',
         examenes: './src/js/examenes',
-        newExam: './src/js/newExam'
+        newExam: './src/js/newExam',
+        newPregunta: './src/js/newPregunta'
     },
     plugins: [
         CWP_Config
@@ -41,7 +42,7 @@ const config = {
         splitChunks: {
             chunks: 'all',
         },
-    },
+    }
 };
 
 module.exports = config;

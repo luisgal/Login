@@ -1,7 +1,8 @@
 {
     "user": {
         "name": "Luis",
-        "correo": "wladeck1@hotmail.com"
+        "correo": "wladeck1@hotmail.com",
+        "sesion": "wrong user"
     },
     "preguntas" : [
         {

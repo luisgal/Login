@@ -1,0 +1,11 @@
+{
+    "login"         : "/html/login.html",
+    "newAccount"    : "/html/createAccount.html", 
+    "loby"          : "/html/loby.html",
+    "preguntas"     : "/html/preguntas.html",
+    "examenes"      : "/html/examenes.html",
+    "newPregunta"   : "/html/newPregunta.html",
+    "newExam"       : "/html/newExam.html",
+    "validateUser"  : "/validateUser",
+    "createUser"    : "/createUser"
+}

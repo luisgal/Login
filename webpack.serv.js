@@ -4,15 +4,12 @@ const { merge } = require('webpack-merge');
 
 const config = merge(prod, {
     output: {
-        filename: 'js/[name].[contentHash].bundle.js',
+        filename: 'views/js/[name].[contentHash].bundle.js',
         path: path.resolve(__dirname, "dist")
     },
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
-        port: 8081,
-        allowedHosts: [
-            'wad.com'
-        ]
+        port: 8081
     },
 
 })

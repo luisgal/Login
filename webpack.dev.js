@@ -9,49 +9,55 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HWP_Config_Login = new HtmlWebpackPlugin({
     favicon: "./src/img/icons/favicon.ico",
     template: './src/html/login.html',
-    filename: 'html/login.html',
+    filename: 'views/html/login.jsp',
     chunks: ['login']
 });
 const HWP_Config_Account = new HtmlWebpackPlugin({
     favicon: "./src/img/icons/favicon.ico",
     template: './src/html/createAccount.html',
-    filename: 'html/createAccount.html',
+    filename: 'views/html/createAccount.jsp',
     chunks: ['createAccount']
 });
 const HWP_Config_Loby = new HtmlWebpackPlugin({
     favicon: "./src/img/icons/favicon.ico",
     template: './src/html/loby.html',
-    filename: 'html/loby.html',
+    filename: 'views/html/loby.jsp',
     chunks: ['loby']
 });
 const HWP_Config_Preguntas = new HtmlWebpackPlugin({
     favicon: "./src/img/icons/favicon.ico",
     template: './src/html/preguntas.html',
-    filename: 'html/preguntas.html',
+    filename: 'views/html/preguntas.jsp',
     chunks: ['preguntas']
 });
 const HWP_Config_Examenes = new HtmlWebpackPlugin({
     favicon: "./src/img/icons/favicon.ico",
     template: './src/html/examenes.html',
-    filename: 'html/examenes.html',
+    filename: 'views/html/examenes.jsp',
     chunks: ['examenes']
 });
 const HWP_Config_NewExam = new HtmlWebpackPlugin({
     favicon: "./src/img/icons/favicon.ico",
     template: './src/html/newExam.html',
-    filename: 'html/newExam.html',
+    filename: 'views/html/newExam.jsp',
     chunks: ['newExam']
+});
+const HWP_Config_NewPregunta = new HtmlWebpackPlugin({
+    favicon: "./src/img/icons/favicon.ico",
+    template: './src/html/newPregunta.html',
+    filename: 'views/html/newPregunta.jsp',
+    chunks: ['newPregunta']
 });
 
 const MiniCSSWebpackPlugin = require('mini-css-extract-plugin');
 const MCSSWP_Config = new MiniCSSWebpackPlugin({
-    filename: "css/[name].css"
+    filename: "views/css/[name].css"
 });
 
 const config = merge(common, {
     mode: 'development',
     output: {
-        filename: 'js/[name].bundle.js',
+        filename: 'views/js/[name].bundle.js',
         path: path.resolve(__dirname, "loginDev")
     },
     plugins: [
@@ -62,7 +68,8 @@ const config = merge(common, {
         HWP_Config_Loby,
         HWP_Config_Preguntas,
         HWP_Config_Examenes,
-        HWP_Config_NewExam
+        HWP_Config_NewExam,
+        HWP_Config_NewPregunta
     ],
     module: {
         rules: [
@@ -79,7 +86,7 @@ const config = merge(common, {
                     loader: 'file-loader',
                     options: {
                         name: '[name].[ext]',
-                        outputPath: "img",
+                        outputPath: "views/img",
                         publicPath: '../img'  
                     }
                 }

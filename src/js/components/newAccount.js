@@ -11,7 +11,7 @@ import { BsArrowRight } from 'react-icons/bs';
 class Inicio extends React.Component {
     render() {
         return (
-            <form action="#" method="GET">
+            <form action={this.props.crear} method="GET">
             <div class="container-sm">
                 <div class="col">
                     <div class="form-group">
