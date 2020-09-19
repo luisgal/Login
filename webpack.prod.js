@@ -9,7 +9,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HWP_Config_Login = new HtmlWebpackPlugin({
     favicon: "./src/img/icons/favicon.ico",
     template: './src/html/login.html',
-    filename: 'views/html/login.html',
+    filename: 'Login_WAD/views/html/login.html',
     chunks: ['login'],
     minify: {
         removeAttributeQuotes:  true,
@@ -20,7 +20,7 @@ const HWP_Config_Login = new HtmlWebpackPlugin({
 const HWP_Config_Account = new HtmlWebpackPlugin({
     favicon: "./src/img/icons/favicon.ico",
     template: './src/html/createAccount.html',
-    filename: 'views/html/createAccount.html',
+    filename: 'Login_WAD/views/html/createAccount.html',
     chunks: ['createAccount'],
     minify: {
         removeAttributeQuotes:  true,
@@ -31,7 +31,7 @@ const HWP_Config_Account = new HtmlWebpackPlugin({
 const HWP_Config_Loby = new HtmlWebpackPlugin({
     favicon: "./src/img/icons/favicon.ico",
     template: './src/html/loby.html',
-    filename: 'views/html/loby.html',
+    filename: 'Login_WAD/views/html/loby.html',
     chunks: ['loby'],
     minify: {
         removeAttributeQuotes:  true,
@@ -42,7 +42,7 @@ const HWP_Config_Loby = new HtmlWebpackPlugin({
 const HWP_Config_Preguntas = new HtmlWebpackPlugin({
     favicon: "./src/img/icons/favicon.ico",
     template: './src/html/preguntas.html',
-    filename: 'views/html/preguntas.html',
+    filename: 'Login_WAD/views/html/preguntas.html',
     chunks: ['preguntas'],
     minify: {
         removeAttributeQuotes:  true,
@@ -53,7 +53,7 @@ const HWP_Config_Preguntas = new HtmlWebpackPlugin({
 const HWP_Config_Examenes = new HtmlWebpackPlugin({
     favicon: "./src/img/icons/favicon.ico",
     template: './src/html/examenes.html',
-    filename: 'views/html/examenes.html',
+    filename: 'Login_WAD/views/html/examenes.html',
     chunks: ['examenes'],
     minify: {
         removeAttributeQuotes:  true,
@@ -64,7 +64,7 @@ const HWP_Config_Examenes = new HtmlWebpackPlugin({
 const HWP_Config_NewExam = new HtmlWebpackPlugin({
     favicon: "./src/img/icons/favicon.ico",
     template: './src/html/newExam.html',
-    filename: 'views/html/newExam.html',
+    filename: 'Login_WAD/views/html/newExam.html',
     chunks: ['newExam'],
     minify: {
         removeAttributeQuotes:  true,
@@ -75,7 +75,7 @@ const HWP_Config_NewExam = new HtmlWebpackPlugin({
 const HWP_Config_NewPregunta = new HtmlWebpackPlugin({
     favicon: "./src/img/icons/favicon.ico",
     template: './src/html/newPregunta.html',
-    filename: 'views/html/newPregunta.html',
+    filename: 'Login_WAD/views/html/newPregunta.html',
     chunks: ['newPregunta'],
     minify: {
         removeAttributeQuotes:  true,
@@ -89,7 +89,7 @@ const TP_Config = new TerserPlugin();
 
 const MiniCSSWebpackPlugin = require('mini-css-extract-plugin');
 const MCSSWP_Config = new MiniCSSWebpackPlugin({
-    filename: "views/css/[name].css"
+    filename: "Login_WAD/views/css/[name].css"
 });
 
 const OptimizeCSSAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
@@ -98,7 +98,7 @@ const OCSSAP_Congif = new OptimizeCSSAssetsWebpackPlugin();
 const config = merge(common, {
     mode: 'production',
     output: {
-        filename: 'views/js/[name].[contentHash].bundle.js',
+        filename: 'Login_WAD/views/js/[name].[contentHash].bundle.js',
         path: path.resolve(__dirname, "loginProd")
     },
     optimization: {
@@ -133,7 +133,7 @@ const config = merge(common, {
                     loader: 'file-loader',
                     options: {
                         name: '[name].[hash].[ext]',
-                        outputPath: "views/img",
+                        outputPath: "Login_WAD/views/img",
                         publicPath: '../img'   
                     }
                 }

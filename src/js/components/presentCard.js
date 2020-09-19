@@ -3,8 +3,6 @@ import React from 'react';
 import 'bootswatch/dist/litera/bootstrap.min.css';
 import '../../css/myCss.css';
 
-import { BsArrowRight } from 'react-icons/bs';
-
 class Card extends React.Component {
     render () {
         return (

@@ -7,57 +7,50 @@ const CWP_Config = new CleanWebpackPlugin();
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HWP_Config_Login = new HtmlWebpackPlugin({
-    favicon: "./src/img/icons/favicon.ico",
     template: './src/html/login.html',
-    filename: 'views/html/login.jsp',
+    filename: 'Login_WAD/views/html/login.html',
     chunks: ['login']
 });
 const HWP_Config_Account = new HtmlWebpackPlugin({
-    favicon: "./src/img/icons/favicon.ico",
     template: './src/html/createAccount.html',
-    filename: 'views/html/createAccount.jsp',
+    filename: 'Login_WAD/views/html/createAccount.html',
     chunks: ['createAccount']
 });
 const HWP_Config_Loby = new HtmlWebpackPlugin({
-    favicon: "./src/img/icons/favicon.ico",
     template: './src/html/loby.html',
-    filename: 'views/html/loby.jsp',
+    filename: 'Login_WAD/views/html/loby.html',
     chunks: ['loby']
 });
 const HWP_Config_Preguntas = new HtmlWebpackPlugin({
-    favicon: "./src/img/icons/favicon.ico",
     template: './src/html/preguntas.html',
-    filename: 'views/html/preguntas.jsp',
+    filename: 'Login_WAD/views/html/preguntas.html',
     chunks: ['preguntas']
 });
 const HWP_Config_Examenes = new HtmlWebpackPlugin({
-    favicon: "./src/img/icons/favicon.ico",
     template: './src/html/examenes.html',
-    filename: 'views/html/examenes.jsp',
+    filename: 'Login_WAD/views/html/examenes.html',
     chunks: ['examenes']
 });
 const HWP_Config_NewExam = new HtmlWebpackPlugin({
-    favicon: "./src/img/icons/favicon.ico",
     template: './src/html/newExam.html',
-    filename: 'views/html/newExam.jsp',
+    filename: 'Login_WAD/views/html/newExam.html',
     chunks: ['newExam']
 });
 const HWP_Config_NewPregunta = new HtmlWebpackPlugin({
-    favicon: "./src/img/icons/favicon.ico",
     template: './src/html/newPregunta.html',
-    filename: 'views/html/newPregunta.jsp',
+    filename: 'Login_WAD/views/html/newPregunta.html',
     chunks: ['newPregunta']
 });
 
 const MiniCSSWebpackPlugin = require('mini-css-extract-plugin');
 const MCSSWP_Config = new MiniCSSWebpackPlugin({
-    filename: "views/css/[name].css"
+    filename: "Login_WAD/views/css/[name].css"
 });
 
 const config = merge(common, {
     mode: 'development',
     output: {
-        filename: 'views/js/[name].bundle.js',
+        filename: 'Login_WAD/views/js/[name].bundle.js',
         path: path.resolve(__dirname, "loginDev")
     },
     plugins: [
@@ -79,17 +72,6 @@ const config = merge(common, {
                     {loader: MiniCSSWebpackPlugin.loader},
                     {loader: 'css-loader'}
                 ]
-            },
-            {
-                test: /.(svg|png|jpg|gif)$/,
-                use: {
-                    loader: 'file-loader',
-                    options: {
-                        name: '[name].[ext]',
-                        outputPath: "views/img",
-                        publicPath: '../img'  
-                    }
-                }
             }
         ]
     }

@@ -6,8 +6,6 @@ import Inicio from "./components/inicio";
 import "../css/myCss.css";
 import 'bootswatch/dist/litera/bootstrap.min.css';
 
-import imagen from "../img/img-01.png";
-
 import { BsArrowRight } from 'react-icons/bs';
 
 class App extends React.Component {
@@ -28,7 +26,7 @@ class App extends React.Component {
                     mode: 'cors',
                     cache: 'default' };
 
-        var myRequest = new Request('/data/links.json', myInit);
+        var myRequest = new Request('/Login_WAD/data/links.json', myInit);
         
         // I will use fake api from jsonplaceholder website
         // this return 100 data 
@@ -67,12 +65,12 @@ class App extends React.Component {
                 <div class="container containerInicio">
                     <div class="row">
                         <div class="col">
-                            <img id="marginImgInit" src={imagen}></img>
+                            <img id="marginImgInit" src="https://portal.icsiiip.com/images/img-01.png"></img>
                         </div>
                         <div class="col">
-                            <Inicio validar={this.state.data.host + this.state.data.validateUser} />
+                            <Inicio validar={this.state.data.validateUser} />
                             <div class="row" id="marginAccount">
-                            <a href={this.state.data.host + this.state.data.newAccount} class="btn btn-outline-success btn-lg btn-block">Create your Account <BsArrowRight /></a>
+                            <a href={this.state.data.newAccount} class="btn btn-outline-success btn-lg btn-block">Create your Account <BsArrowRight /></a>
                             </div>
                         </div>
                     </div> 

@@ -6,8 +6,6 @@ import NewAccount from "./components/newAccount";
 import "../css/myCss.css";
 import 'bootswatch/dist/litera/bootstrap.min.css';
 
-import imagen from "../img/img-01.png";
-
 class App extends React.Component {
     constructor(props){
         super(props);
@@ -26,7 +24,7 @@ class App extends React.Component {
                     mode: 'cors',
                     cache: 'default' };
 
-        var myRequest = new Request('/data/links.json', myInit);
+        var myRequest = new Request('/Login_WAD/data/links.json', myInit);
         
         // I will use fake api from jsonplaceholder website
         // this return 100 data 
@@ -65,7 +63,7 @@ class App extends React.Component {
                 <div class="container containerInicio">
                     <div class="row">
                         <div class="col">
-                            <img id="marginImgInit" src={imagen}></img>
+                            <img id="marginImgInit" src="https://portal.icsiiip.com/images/img-01.png"></img>
                         </div>
                         <div class="col">
                             <NewAccount crear={this.state.data.createUser}/>
