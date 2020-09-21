@@ -66,7 +66,7 @@ class App extends React.Component {
                 <div>
                     <NavBar />
                     <div class="container container-B">
-                    <LobyBody name={this.state.data.user.name}/> 
+                    <LobyBody name={this.state.data.user.name} links={this.state.data.links} /> 
                     </div>
                 </div>
             );

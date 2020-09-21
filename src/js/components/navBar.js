@@ -24,7 +24,7 @@ class NavBar extends React.Component {
                         </li>
                     </ul>
                 </div>
-                <form action="#" class="form-inline my-2 my-lg-0">
+                <form action="/Login_WAD/close" class="form-inline my-2 my-lg-0">
                     <button class="btn btn-danger my-2 my-sm-0" type="submit">Cerrar sesion <GrLogout /></button>
                 </form>
             </nav>

@@ -26,7 +26,7 @@ class App extends React.Component {
                     mode: 'cors',
                     cache: 'default' };
 
-        var myRequest = new Request('/Login_WAD/data/links.json', myInit);
+        var myRequest = new Request('/Login_WAD/data/dataFront.json', myInit);
         
         // I will use fake api from jsonplaceholder website
         // this return 100 data 
@@ -68,9 +68,9 @@ class App extends React.Component {
                             <img id="marginImgInit" src="https://portal.icsiiip.com/images/img-01.png"></img>
                         </div>
                         <div class="col">
-                            <Inicio validar={this.state.data.validateUser} />
+                            <Inicio validar={this.state.data.links.validateUser} sesion={this.state.data.user.sesion}/>
                             <div class="row" id="marginAccount">
-                            <a href={this.state.data.newAccount} class="btn btn-outline-success btn-lg btn-block">Create your Account <BsArrowRight /></a>
+                            <a href={this.state.data.links.newAccount} class="btn btn-outline-success btn-lg btn-block">Create your Account <BsArrowRight /></a>
                             </div>
                         </div>
                     </div> 

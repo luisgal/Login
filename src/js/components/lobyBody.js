@@ -13,9 +13,9 @@ class LobyBody extends React.Component {
                 <h2>Bienvenido de nuevo {this.props.name} </h2>
                 <p class="lead"><strong><em>¿Que deseas hacer el día de hoy?</em></strong></p>
                 <div class="row">
-                    <div class="col"><Card header={data.pregunta.header} title={data.pregunta.title} body={data.pregunta.body} link={data.pregunta.link}/></div>
-                    <div class="col"><Card header={data.examen.header} title={data.examen.title} body={data.examen.body} link={data.examen.link}/></div>
-                    <div class="col"><Card header={data.probar.header} title={data.probar.title} body={data.probar.body} link={data.probar.link}/></div>
+                    <div class="col"><Card header={data.pregunta.header} title={data.pregunta.title} body={data.pregunta.body} link={this.props.links.preguntas}/></div>
+                    <div class="col"><Card header={data.examen.header} title={data.examen.title} body={data.examen.body} link={this.props.links.examenes}/></div>
+                    <div class="col"><Card header={data.probar.header} title={data.probar.title} body={data.probar.body} link={this.props.links.examenes}/></div>
                 </div>
             </div>
         )

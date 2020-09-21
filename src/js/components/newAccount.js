@@ -11,20 +11,20 @@ import { BsArrowRight } from 'react-icons/bs';
 class Inicio extends React.Component {
     render() {
         return (
-            <form action={this.props.crear} method="GET">
+            <form action={this.props.crear} method="POST">
             <div class="container-sm">
                 <div class="col">
                     <div class="form-group">
-                        <label for="exampleNameUser"><RiUserAddFill /> User Name</label>
-                        <input type="text" class="form-control rounded-pill border" id="exampleNameUser" placeholder="User Name"/>
+                        <label for="name"><RiUserAddFill /> User Name</label>
+                        <input type="text" class="form-control rounded-pill border" id="name" placeholder="User Name" name="name" required/>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1"><FaUserAlt /> Email address</label>
-                        <input type="email" class="form-control rounded-pill border" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
-                    </div>
+                        <label for="email"><FaUserAlt /> Email address</label>
+                        <input type="email" class="form-control rounded-pill border" id="email" aria-describedby="emailHelp" placeholder="Enter email" name="email" required/>
+                    </div> 
                     <div class="form-group">
-                        <label for="exampleInputPassword1"><FaKey /> Password</label>
-                        <input type="password" class="form-control rounded-pill border" id="exampleInputPassword1" placeholder="Password"/>
+                        <label for="password"><FaKey /> Password</label>
+                        <input type="password" class="form-control rounded-pill border" id="password" placeholder="Password" name="password" required/>
                     </div>
                     <button class="btn btn-outline-success btn-lg btn-block">Create New Account <BsArrowRight /></button>
                 </div>

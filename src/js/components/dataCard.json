@@ -2,20 +2,17 @@
     "pregunta": {
         "header": "Crear/Modificar",
         "title" : "Pregunta",
-        "body" : "En este segmento podrás crear una nueva pregunta que posteriormente podrás agregar a un examen.",
-        "link": ""
+        "body" : "En este segmento podrás crear una nueva pregunta que posteriormente podrás agregar a un examen."
     },
     "examen": {
         "header": "Crear/Modificar",
         "title" : "Examen",
-        "body" : "En este segmento podrás crear un nuevo examen agregando distintas pregruntas de las ya creadaas por ti y distintos usuarios.",
-        "link": ""
+        "body" : "En este segmento podrás crear un nuevo examen agregando distintas pregruntas de las ya creadaas por ti y distintos usuarios."
     },
     "probar": {
         "header": "Probar",
         "title" : "Probar examen",
-        "body" : "En este segmento podrás probar cada uno de los examenes registrados en esta plataforma.",
-        "link": ""
+        "body" : "En este segmento podrás probar cada uno de los examenes registrados en esta plataforma."
     }
     
 }

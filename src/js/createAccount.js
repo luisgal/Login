@@ -24,7 +24,7 @@ class App extends React.Component {
                     mode: 'cors',
                     cache: 'default' };
 
-        var myRequest = new Request('/Login_WAD/data/links.json', myInit);
+        var myRequest = new Request('/Login_WAD/data/dataFront.json', myInit);
         
         // I will use fake api from jsonplaceholder website
         // this return 100 data 
@@ -66,7 +66,7 @@ class App extends React.Component {
                             <img id="marginImgInit" src="https://portal.icsiiip.com/images/img-01.png"></img>
                         </div>
                         <div class="col">
-                            <NewAccount crear={this.state.data.createUser}/>
+                            <NewAccount crear={this.state.data.links.createUser}/>
                         </div>
                     </div> 
                 </div>

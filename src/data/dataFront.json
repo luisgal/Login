@@ -44,5 +44,16 @@
             "link" : "#"
         }
     ],
-    "probar": false
+    "probar": false,
+    "links":{
+        "login"         : "/Login_WAD/views/html/login.html",
+        "newAccount"    : "/Login_WAD/views/html/createAccount.html", 
+        "loby"          : "/Login_WAD/views/html/loby.html",
+        "preguntas"     : "/Login_WAD/views/html/preguntas.html",
+        "examenes"      : "/Login_WAD/views/html/examenes.html",
+        "newPregunta"   : "/Login_WAD/views/html/newPregunta.html",
+        "newExam"       : "/Login_WAD/views/html/newExam.html",
+        "validateUser"  : "/Login_WAD/validateUser",
+        "createUser"    : "/Login_WAD/createUser"
+    }
 }
