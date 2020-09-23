@@ -64,7 +64,7 @@ class App extends React.Component {
         }else{
             return(
                 <div>
-                    <NavBar />
+                    <NavBar links={this.state.data.links}/>
                     <div class="container container-B">
                     <LobyBody name={this.state.data.user.name} links={this.state.data.links} /> 
                     </div>

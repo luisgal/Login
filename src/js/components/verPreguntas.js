@@ -4,6 +4,7 @@ import 'bootswatch/dist/litera/bootstrap.min.css';
 
 import { FaArrowAltCircleRight } from 'react-icons/fa';
 import { BsArrowRight } from 'react-icons/bs';
+import { FaRegTrashAlt } from 'react-icons/fa';
 
 class VerPreguntas extends React.Component {
     render () {
@@ -26,6 +27,12 @@ class VerPreguntas extends React.Component {
                                 <td><a href={pregunta.link}><FaArrowAltCircleRight /> {pregunta.id}</a></td>
                                 <td>{pregunta.name}</td>
                                 <td>{pregunta.descripcion}</td>
+                                <td>
+                                    <form action={this.props.eliminar}>
+                                        <input type="hidden" value={pregunta.id}></input>
+                                        <button type="submit" class="btn btn-danger">Eliminar <FaRegTrashAlt /></button>
+                                    </form>
+                                </td>
                             </tr>
                         ))}
                     </tbody>

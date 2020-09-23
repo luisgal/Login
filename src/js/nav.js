@@ -25,7 +25,7 @@ class App extends React.Component {
                     mode: 'cors',
                     cache: 'default' };
 
-        var myRequest = new Request('/data/dataFront.json', myInit);
+        var myRequest = new Request('/Login_WAD/data/dataFront.json', myInit);
         
         // I will use fake api from jsonplaceholder website
         // this return 100 data 
@@ -63,7 +63,7 @@ class App extends React.Component {
         }else{
             return(
                 <div>
-                    <NavBar />
+                    <NavBar links={this.state.data.links}/>
                 </div>
             );
         }

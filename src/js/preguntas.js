@@ -64,9 +64,9 @@ class App extends React.Component {
         }else{
             return(
                 <div>
-                    <NavBar />
+                    <NavBar links={this.state.data.links}/>
                     <div class="container container-B">
-                        <VerPreguntas preguntas={this.state.data.preguntas}/>
+                        <VerPreguntas preguntas={this.state.data.preguntas} eliminar={this.state.data.links.eliminarP}/>
                     </div>
                 </div>
             );

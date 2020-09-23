@@ -44,13 +44,13 @@ const HWP_Config_NewPregunta = new HtmlWebpackPlugin({
 const HWP_Config_ResolverPregunta = new HtmlWebpackPlugin({
     favicon: "./src/img/icons/favicon.ico",
     template: './src/html/resolverPregunta.html',
-    filename: 'views/html/resolverPregunta.jsp',
+    filename: 'Login_WAD/views/html/resolverPregunta.html',
     chunks: ['nav']
 });
 const HWP_Config_VerPregunta = new HtmlWebpackPlugin({
     favicon: "./src/img/icons/favicon.ico",
     template: './src/html/verPregunta.html',
-    filename: 'views/html/verPregunta.jsp',
+    filename: 'Login_WAD/views/html/verPregunta.html',
     chunks: ['nav']
 });
 

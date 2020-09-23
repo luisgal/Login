@@ -1,5 +1,4 @@
 import React from "react";
-import {render} from "react-dom";
 
 import 'bootswatch/dist/litera/bootstrap.min.css';
 
@@ -10,24 +9,24 @@ class NavBar extends React.Component {
     render () {
         return (
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#"> <BiHighlight /> WAD ESCOM Exams JS </a>
+                <a class="navbar-brand" href={this.props.links.loby}> <BiHighlight /> WAD ESCOM Exams JS </a>
 
                 <div class="collapse navbar-collapse" id="navbarColor02">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Examenes</a>
+                            <a class="nav-link" href={this.props.links.examenes}>Examenes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Preguntas</a>
+                            <a class="nav-link" href={this.props.links.preguntas}>Preguntas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Probar examen</a>
+                            <a class="nav-link" href={this.props.links.examenes}>Probar examen</a>
                         </li>
                     </ul>
                 </div>
-                <form action="/Login_WAD/close" class="form-inline my-2 my-lg-0">
-                    <button class="btn btn-danger my-2 my-sm-0" type="submit">Cerrar sesion <GrLogout /></button>
-                </form>
+
+                <a href={this.props.links.close} class="btn btn-danger my-2 my-sm-0">Cerrar sesion <GrLogout /></a>
+                
             </nav>
         )
     }

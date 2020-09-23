@@ -64,8 +64,8 @@ class App extends React.Component {
         }else{
             return(
                 <div>
-                    <NavBar />
-                    <Form action="#">
+                    <NavBar links={this.state.data.links}/>
+                    <Form action={this.state.data.links.crearE}>
                     <div class="container container-B">
                         <h2>Examen: </h2>
                         <input class="form-control" type="text" placeholder="Nombre del examen" id="examName"></input>
@@ -88,7 +88,7 @@ class App extends React.Component {
                                     <tr>
                                         <td>
                                             <Form.Group as={Row} controlId={pregunta.id}>
-                                                <Form.Check type="checkbox"/>
+                                                <Form.Check type="checkbox" name={"pregunta" + pregunta.id} />
                                                 <Form.Label>{pregunta.id} - Agregar</Form.Label>
                                             </Form.Group>
                                         </td>

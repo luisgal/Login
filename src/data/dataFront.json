@@ -54,6 +54,11 @@
         "newPregunta"   : "/Login_WAD/views/html/newPregunta.html",
         "newExam"       : "/Login_WAD/views/html/newExam.html",
         "validateUser"  : "/Login_WAD/validateUser",
-        "createUser"    : "/Login_WAD/createUser"
+        "createUser"    : "/Login_WAD/createUser",
+        "close"         : "/Login_WAD/close",
+        "eliminarP"     : "/Login_WAD/eliminarP",
+        "eliminarE"     : "/Login_WAD/eliminarE",
+        "crearP"        : "/Login_WAD/crearP",
+        "crearE"        : "/Login_WAD/crearE"
     }
 }

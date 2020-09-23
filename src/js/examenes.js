@@ -64,9 +64,9 @@ class App extends React.Component {
         }else{
             return(
                 <div>
-                    <NavBar />
+                    <NavBar links={this.state.data.links}/>
                     <div class="container container-B">
-                        <VerExamenes examenes={this.state.data.examenes} probar={this.state.data.probar}/>
+                        <VerExamenes examenes={this.state.data.examenes} probar={this.state.data.probar} eliminar={this.state.data.links.eliminarE}/>
                     </div>
                 </div>
             );
