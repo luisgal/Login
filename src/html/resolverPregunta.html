@@ -13,26 +13,10 @@
     <form action="#">
         <div class="container container-B">
             <h2>Pregunta: </h2>
-            <input class="form-control" type="text" placeholder="Nombre de la pregunta" id="examName" required></input>
             
             <h2>Descripcion: </h2>
-            <textarea class="form-control" id="examDescripcion" placeholder="Descripcion de lo que se debera hacer en esta pregunta" rows="3" required></textarea>
 
             <h2>Se evaluara: </h2>
-            <div class="form-group">
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="customCheck1">
-                    <label class="custom-control-label" for="customCheck1">Figuras dibujadas</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="customCheck2">
-                    <label class="custom-control-label" for="customCheck2">Posicion</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="customCheck4">
-                    <label class="custom-control-label" for="customCheck4">Color</label>
-                </div>
-            </div>
              
             <h2>Selecciona los elementos que desees agregar.</h2>
             <div class="row">
@@ -56,6 +40,9 @@
                     <div class="row m-2 pt-2">
                         <button type="button" class="btn btn-outline-danger m-1" id="eliminar">Eliminar elemento seleccionado</button>
                     </div>
+                    <div class="row m-2 pt-2">
+                        <button type="button" class="btn btn-outline-info m-1" id="reiniciar">Reiniciar pregunta</button>
+                    </div>
                 </div>
                 <div class="col m-2">
                     <div class="m-3 p-0" id="divCanvas">
@@ -66,7 +53,10 @@
             </div>
 
             <script>
+                var pregunta = {"version":"4.1.0","objects":[{"type":"rect","version":"4.1.0","originX":"left","originY":"top","left":240,"top":176,"width":50,"height":50,"fill":"#000000","stroke":null,"strokeWidth":1,"strokeDashArray":null,"strokeLineCap":"butt","strokeDashOffset":0,"strokeLineJoin":"miter","strokeMiterLimit":4,"scaleX":1,"scaleY":1,"angle":0,"flipX":false,"flipY":false,"opacity":1,"shadow":null,"visible":true,"backgroundColor":"","fillRule":"nonzero","paintFirst":"fill","globalCompositeOperation":"source-over","skewX":0,"skewY":0,"rx":0,"ry":0}]};
+
                 var canvas = new fabric.Canvas('c');
+                canvas.loadFromJSON(pregunta);
                 loadCanvas();
                 
                 document.getElementById('rectangulo').onclick = function () {
@@ -152,6 +142,11 @@
                     }
                 }
 
+                document.getElementById('reiniciar').onclick = function () {
+                    canvas.loadFromJSON(pregunta);
+                    loadCanvas();
+                }
+
                 canvas.on({
                     'object:modified': loadCanvas,
                 })
@@ -164,7 +159,7 @@
                 
             </script>
 
-            <button class="btn btn-outline-success btn-lg btn-block">Crear Pregunta</button>
+            <button class="btn btn-outline-success btn-lg btn-block">Evaluar mi respuesta</button>
         </div>
     </form>
     

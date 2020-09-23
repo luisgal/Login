@@ -11,7 +11,7 @@ class VerPreguntas extends React.Component {
             <div>
                 <h2>Preguntas</h2>
                 <p class="lead"><strong><em>Acontinuacion se muestran todas las preguntas registradas en nuestra plataforma con las que puedes interactuar. Selecciona la pregunta a la cual deseas ingresar o puedes crear una nueva pregunta. </em></strong></p>
-                <a href="#" class="btn btn-outline-success btn-lg btn-block">Crear pregunta <BsArrowRight /></a>
+                <a href="./newPregunta.html" class="btn btn-outline-success btn-lg btn-block">Crear pregunta <BsArrowRight /></a>
                 <table class="table">
                     <thead>
                     <tr>

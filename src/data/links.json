@@ -8,5 +8,6 @@
     "newPregunta"   : "/views/html/newPregunta.html",
     "newExam"       : "/views/html/newExam.html",
     "validateUser"  : "/validateUser",
-    "createUser"    : "/createUser"
+    "createUser"    : "/createUser",
+    "crearPregunta"    : "/views/html/crearPregunta.html"
 }

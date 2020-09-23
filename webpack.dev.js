@@ -46,7 +46,19 @@ const HWP_Config_NewPregunta = new HtmlWebpackPlugin({
     favicon: "./src/img/icons/favicon.ico",
     template: './src/html/newPregunta.html',
     filename: 'views/html/newPregunta.jsp',
-    chunks: ['newPregunta']
+    chunks: ['nav']
+});
+const HWP_Config_ResolverPregunta = new HtmlWebpackPlugin({
+    favicon: "./src/img/icons/favicon.ico",
+    template: './src/html/resolverPregunta.html',
+    filename: 'views/html/resolverPregunta.jsp',
+    chunks: ['nav']
+});
+const HWP_Config_VerPregunta = new HtmlWebpackPlugin({
+    favicon: "./src/img/icons/favicon.ico",
+    template: './src/html/verPregunta.html',
+    filename: 'views/html/verPregunta.jsp',
+    chunks: ['nav']
 });
 
 const MiniCSSWebpackPlugin = require('mini-css-extract-plugin');
@@ -69,7 +81,9 @@ const config = merge(common, {
         HWP_Config_Preguntas,
         HWP_Config_Examenes,
         HWP_Config_NewExam,
-        HWP_Config_NewPregunta
+        HWP_Config_NewPregunta,
+        HWP_Config_ResolverPregunta,
+        HWP_Config_VerPregunta
     ],
     module: {
         rules: [
