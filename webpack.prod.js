@@ -76,13 +76,35 @@ const HWP_Config_NewPregunta = new HtmlWebpackPlugin({
     favicon: "./src/img/icons/favicon.ico",
     template: './src/html/newPregunta.html',
     filename: 'Login_WAD/views/html/newPregunta.html',
-    chunks: ['newPregunta'],
+    chunks: ['nav'],
     minify: {
         removeAttributeQuotes:  true,
         collapseWhitespace: true,
         removeComments: true
     }
 });
+const HWP_Config_ResolverPregunta = new HtmlWebpackPlugin({
+    favicon: "./src/img/icons/favicon.ico",
+    template: './src/html/resolverPregunta.html',
+    filename: 'views/html/resolverPregunta.html',
+    chunks: ['nav'],
+    minify: {
+        removeAttributeQuotes:  true,
+        collapseWhitespace: true,
+        removeComments: true
+    }
+})
+const HWP_Config_VerPregunta = new HtmlWebpackPlugin({
+    favicon: "./src/img/icons/favicon.ico",
+    template: './src/html/verPregunta.html',
+    filename: 'views/html/verPregunta.html',
+    chunks: ['nav'],
+    minify: {
+        removeAttributeQuotes:  true,
+        collapseWhitespace: true,
+        removeComments: true
+    }
+})
 
 const TerserPlugin = require('terser-webpack-plugin');
 const TP_Config = new TerserPlugin();
@@ -111,7 +133,9 @@ const config = merge(common, {
             HWP_Config_Preguntas,
             HWP_Config_Examenes,
             HWP_Config_NewExam,
-            HWP_Config_NewPregunta
+            HWP_Config_NewPregunta,
+            HWP_Config_ResolverPregunta,
+            HWP_Config_VerPregunta
         ]
     },
     plugins: [

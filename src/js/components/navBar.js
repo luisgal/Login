@@ -1,4 +1,5 @@
 import React from "react";
+import {render} from "react-dom";
 
 import 'bootswatch/dist/litera/bootstrap.min.css';
 

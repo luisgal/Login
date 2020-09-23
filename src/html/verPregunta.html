@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.1.0/fabric.min.js"></script>
+    <title>WAD_ETS</title>
+</head>
+<body class="inicioColor">
+    
+    <div id="app_Nav"></div>
+    
+    <div class="container container-B">
+        <div class="row">
+            <div class="col m-2">
+                <h2>Pregunta: </h2>
+        
+                <h2>Descripcion: </h2>
+
+                <h2>Se evaluara: </h2>
+            </div>
+            <div class="col m-2">
+                <div class="m-3 p-0" id="divCanvas">
+                    <canvas id="c" class="border border-warning rounded-lg" width="500" height="400"></canvas>
+                    <input type="hidden" id="canvasJSON" name="canvasJSON">
+                </div>
+            </div>
+        </div>
+
+        <a href="#" class="btn btn-outline-success btn-lg btn-block">Regresar</a>
+
+        <script>
+            var pregunta = {"version":"4.1.0","objects":[{"type":"rect","version":"4.1.0","originX":"left","originY":"top","left":240,"top":176,"width":50,"height":50,"fill":"#000000","stroke":null,"strokeWidth":1,"strokeDashArray":null,"strokeLineCap":"butt","strokeDashOffset":0,"strokeLineJoin":"miter","strokeMiterLimit":4,"scaleX":1,"scaleY":1,"angle":0,"flipX":false,"flipY":false,"opacity":1,"shadow":null,"visible":true,"backgroundColor":"","fillRule":"nonzero","paintFirst":"fill","globalCompositeOperation":"source-over","skewX":0,"skewY":0,"rx":0,"ry":0}]};
+
+            var canvas = new fabric.StaticCanvas('c');
+            canvas.loadFromJSON(pregunta);
+        </script>
+    </div>
+    
+</body>
+</html>

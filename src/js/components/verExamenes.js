@@ -11,7 +11,7 @@ class VerExamenes extends React.Component {
         return (
             <div>
                 <h2>Examenes</h2>
-                <ExamHead probar={this.props.probar} probar={this.props.probar}/>
+                <ExamHead probar={this.props.probar}/>
                 <table class="table">
                     <thead>
                     <tr>

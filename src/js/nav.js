@@ -1,6 +1,5 @@
 import React from "react";
 import {render} from "react-dom";
-import {Form,Col,Row} from 'react-bootstrap';
 
 import 'bootswatch/dist/litera/bootstrap.min.css';
 import "../css/myCss.css";
@@ -26,7 +25,7 @@ class App extends React.Component {
                     mode: 'cors',
                     cache: 'default' };
 
-        var myRequest = new Request('/Login_WAD/data/dataFront.json', myInit);
+        var myRequest = new Request('/data/dataFront.json', myInit);
         
         // I will use fake api from jsonplaceholder website
         // this return 100 data 
@@ -65,17 +64,6 @@ class App extends React.Component {
             return(
                 <div>
                     <NavBar />
-                    <Form action="#">
-                    <div class="container container-B">
-                        <h2>Pregunta: </h2>
-                        <input class="form-control" type="text" placeholder="Nombre de la pregunta" id="examName"></input>
-                        
-                        <h2>Descripcion: </h2>
-                        <textarea class="form-control" id="examDescripcion" placeholder="Descripcion de lo que se debera hacer en esta pregunta" rows="3"></textarea>
-
-                        <button class="btn btn-outline-success btn-lg btn-block">Crear Pregunta</button>
-                    </div>
-                    </Form>
                 </div>
             );
         }
@@ -84,5 +72,5 @@ class App extends React.Component {
 
 render(
     <App/>,
-    document.getElementById('app_newPregunta')
+    document.getElementById('app_Nav')
 )

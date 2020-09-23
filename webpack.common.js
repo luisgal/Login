@@ -13,7 +13,7 @@ const config = {
         preguntas: './src/js/preguntas',
         examenes: './src/js/examenes',
         newExam: './src/js/newExam',
-        newPregunta: './src/js/newPregunta'
+        nav: './src/js/nav'
     },
     plugins: [
         CWP_Config
