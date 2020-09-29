@@ -10,31 +10,31 @@
     
     <div id="app_Nav"></div>
     
-    <form action="/Login_WAD/crearP">
+    <form action="/Login_WAD/crearP" method="POST">
         <div class="container container-B">
             <h2>Pregunta: </h2>
-            <input class="form-control" type="text" placeholder="Nombre de la pregunta" id="examName" required></input>
+            <input name="namePregunta" class="form-control" type="text" placeholder="Nombre de la pregunta" id="examName" required></input>
             
             <h2>Descripcion: </h2>
-            <textarea class="form-control" id="examDescripcion" placeholder="Descripcion de lo que se debera hacer en esta pregunta" rows="3" required></textarea>
+            <textarea name="descripcionPregunta" class="form-control" id="examDescripcion" placeholder="Descripcion de lo que se debera hacer en esta pregunta" rows="3" required></textarea>
 
             <h2>Se evaluara: </h2>
             <div class="form-group">
                 <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                    <input name="checkFigura" type="checkbox" class="custom-control-input" id="customCheck1" value="off">
                     <label class="custom-control-label" for="customCheck1">Figuras dibujadas</label>
                 </div>
                 <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="customCheck2">
+                    <input name="checkPosicion" type="checkbox" class="custom-control-input" id="customCheck2" value="off">
                     <label class="custom-control-label" for="customCheck2">Posicion</label>
                 </div>
                 <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="customCheck4">
+                    <input name="checkColor" type="checkbox" class="custom-control-input" id="customCheck4" value="off">
                     <label class="custom-control-label" for="customCheck4">Color</label>
                 </div>
             </div>
              
-            <h2>Selecciona los elementos que desees agregar.</h2>
+            <h2>Selecciona los elementos que desees agregar: Esta es la manera en como se presentara la pregunta inicial.</h2>
             <div class="row">
                 <div class="col m-2">
                     <div class="row m-2">
@@ -60,13 +60,22 @@
                 <div class="col m-2">
                     <div class="m-3 p-0" id="divCanvas">
                         <canvas id="c" class="border border-warning rounded-lg" width="500" height="400"></canvas>
-                        <input type="hidden" id="canvasJSON" name="canvasJSON">
+                        <input name="canvasPregunta" type="hidden" id="canvasJSON">
                     </div>
                 </div>
             </div>
-
+            <h2>Solucion: Esta es la respuesta correcta.</h2>
+            <div>
+                <button type="button" class="btn btn-outline-danger m-1" id="eliminarS">Eliminar elemento seleccionado de la solución</button>
+                <div class="m-3 p-0" id="divCanvas2">
+                    <canvas id="ca" class="border border-warning rounded-lg" width="500" height="400"></canvas>
+                    <input name="canvasSolucion" type="hidden" id="canvasJSON2">
+                </div>
+            </div>
+            
             <script>
                 var canvas = new fabric.Canvas('c');
+                var canvas2 = new fabric.Canvas('ca');
                 loadCanvas();
                 
                 document.getElementById('rectangulo').onclick = function () {
@@ -77,7 +86,15 @@
                         height: 50,
                         fill: document.getElementById('color').value
                     });
+                    element2 = new fabric.Rect({
+                        left: 50,
+                        top: 50,
+                        width: 50,
+                        height: 50,
+                        fill: document.getElementById('color').value
+                    });
                     canvas.add(element);
+                    canvas2.add(element2);
                     loadCanvas();
                 }
 
@@ -88,7 +105,14 @@
                         radius: 25,
                         fill: document.getElementById('color').value
                     });
+                    element2 = new fabric.Circle({
+                        left: 50,
+                        top: 50,
+                        radius: 25,
+                        fill: document.getElementById('color').value
+                    });
                     canvas.add(element);
+                    canvas2.add(element2);
                     loadCanvas();
                 }
                 
@@ -98,7 +122,13 @@
                         stroke: document.getElementById('color').value,
                         strokeWidth: 2
                     });
+                    element2 = new fabric.Line([50,50,50,100],{
+                        fill: document.getElementById('color').value,
+                        stroke: document.getElementById('color').value,
+                        strokeWidth: 2
+                    });
                     canvas.add(element);
+                    canvas2.add(element2);
                     loadCanvas();
                 }
 
@@ -110,7 +140,15 @@
                         height: 50,
                         fill: document.getElementById('color').value
                     });
+                    element2 = new fabric.Triangle({
+                        left: 50,
+                        top: 50,
+                        width: 50,
+                        height: 50,
+                        fill: document.getElementById('color').value
+                    });
                     canvas.add(element);
+                    canvas2.add(element2);
                     loadCanvas();
                 }
 
@@ -121,7 +159,14 @@
                         width: 50,
                         fontSize: 20
                     });
+                    element2 = new fabric.Textbox(document.getElementById('textBox').value,{
+                        left: 50,
+                        top: 50,
+                        width: 50,
+                        fontSize: 20
+                    });
                     canvas.add(element);
+                    canvas2.add(element2);
                     loadCanvas();
                 }
 
@@ -136,8 +181,15 @@
                                 left: 50,
                                 top: 50
                             });
+                            var image2 = new fabric.Image(imgObj);
+                            image2.set({
+                                left: 50,
+                                top: 50
+                            });
                             image.scale(0.1);
+                            image2.scale(0.1);
                             canvas.add(image);
+                            canvas2.add(image2);
                         }
                     }
                     reader.readAsDataURL(e.target.files[0]);
@@ -151,6 +203,14 @@
                         loadCanvas();
                     }
                 }
+                
+                document.getElementById('eliminarS').onclick = function () {
+                    var element = canvas2.getActiveObject();
+                    if(element){
+                        canvas2.remove(element);
+                        loadCanvas();
+                    }
+                }
 
                 canvas.on({
                     'object:modified': loadCanvas,
@@ -158,7 +218,7 @@
                 
                 function loadCanvas(){
                     document.getElementById('canvasJSON').value = JSON.stringify(canvas);
-                    console.log(JSON.stringify(canvas));
+                    document.getElementById('canvasJSON2').value = JSON.stringify(canvas2);
                 }
                 
                 

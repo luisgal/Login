@@ -26,7 +26,7 @@ class App extends React.Component {
                     mode: 'cors',
                     cache: 'default' };
 
-        var myRequest = new Request('/Login_WAD/data/dataFront.json', myInit);
+        var myRequest = new Request('/Login_WAD/preguntas', myInit);
         
         // I will use fake api from jsonplaceholder website
         // this return 100 data 
@@ -68,10 +68,10 @@ class App extends React.Component {
                     <Form action={this.state.data.links.crearE}>
                     <div class="container container-B">
                         <h2>Examen: </h2>
-                        <input class="form-control" type="text" placeholder="Nombre del examen" id="examName"></input>
+                        <input name="examName" class="form-control" type="text" placeholder="Nombre del examen" id="examName"></input>
                         
                         <h2>Descripcion: </h2>
-                        <textarea class="form-control" id="examDescripcion" placeholder="Descripcion del examen" rows="3"></textarea>
+                        <textarea name="examDescripcion" class="form-control" id="examDescripcion" placeholder="Descripcion del examen" rows="3"></textarea>
                         
                         <p class="lead"><strong><em>Acontinuacion se muestran todos las preguntas registradas en nuestra plataforma con las que puedes interactuar. Selecciona todas aquellas que deseas agregar a este examen. </em></strong></p>
                         <p class="lead"><strong><em><span class="text-danger">Importante,</span> las preguntas deben estar anteriormente creadas para poder agregarlas. </em></strong></p>
@@ -88,7 +88,7 @@ class App extends React.Component {
                                     <tr>
                                         <td>
                                             <Form.Group as={Row} controlId={pregunta.id}>
-                                                <Form.Check type="checkbox" name={"pregunta" + pregunta.id} />
+                                                <Form.Check type="checkbox" id={"pregunta" + pregunta.id} name={"pregunta" + pregunta.id} value={pregunta.id}/>
                                                 <Form.Label>{pregunta.id} - Agregar</Form.Label>
                                             </Form.Group>
                                         </td>

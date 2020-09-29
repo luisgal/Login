@@ -24,9 +24,10 @@ class App extends React.Component {
         var myInit = { method: 'GET',
                     headers: myHeaders,
                     mode: 'cors',
-                    cache: 'default' };
+                    cache: 'default'
+                };
 
-        var myRequest = new Request('/Login_WAD/data/dataFront.json', myInit);
+        var myRequest = new Request('/Login_WAD/datos', myInit);
         
         // I will use fake api from jsonplaceholder website
         // this return 100 data 

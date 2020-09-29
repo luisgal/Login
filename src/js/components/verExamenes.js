@@ -24,12 +24,17 @@ class VerExamenes extends React.Component {
                     <tbody>
                         {this.props.examenes.map(examen => (
                             <tr>
-                                <td><a href={examen.link}><FaArrowAltCircleRight /> {examen.id}</a></td>
+                                <td>
+                                    <form action="/Login_WAD/verExamen">
+                                        <input type="hidden" name={"examen" + examen.id} value={examen.id}></input>
+                                        <button type="submit" class="btn btn-info"><FaArrowAltCircleRight /> {examen.id}</button>
+                                    </form>
+                                </td>
                                 <td>{examen.name}</td>
                                 <td>{examen.descripcion}</td>
                                 <td>
-                                    <form action={this.props.eliminar}>
-                                        <input type="hidden" name="idExamen" value={examen.id}></input>
+                                    <form action="/Login_WAD/borrarExamen">
+                                        <input type="hidden" name={"examen" + examen.id} value={examen.id}></input>
                                         <button type="submit" class="btn btn-danger">Eliminar <FaRegTrashAlt /></button>
                                     </form>
                                 </td>

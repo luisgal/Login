@@ -24,12 +24,17 @@ class VerPreguntas extends React.Component {
                     <tbody>
                         {this.props.preguntas.map(pregunta => (
                             <tr>
-                                <td><a href={pregunta.link}><FaArrowAltCircleRight /> {pregunta.id}</a></td>
+                                <td>
+                                    <form action="/Login_WAD/verPregunta">
+                                        <input type="hidden" name={"pregunta" + pregunta.id} value={pregunta.id}></input>
+                                        <button type="submit" class="btn btn-info"><FaArrowAltCircleRight /> {pregunta.id}</button>
+                                    </form>
+                                </td>
                                 <td>{pregunta.name}</td>
                                 <td>{pregunta.descripcion}</td>
                                 <td>
-                                    <form action={this.props.eliminar}>
-                                        <input type="hidden" value={pregunta.id}></input>
+                                    <form action="/Login_WAD/borrarPregunta">
+                                        <input type="hidden" name={"pregunta" + pregunta.id} value={pregunta.id}></input>
                                         <button type="submit" class="btn btn-danger">Eliminar <FaRegTrashAlt /></button>
                                     </form>
                                 </td>
